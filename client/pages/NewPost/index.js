@@ -4,7 +4,6 @@ import { Helmet } from 'react-helmet';
 import { graphql } from 'react-apollo';
 
 import Loader from '../../components/Loader';
-import AddPostMutation from './addPost.graphql';
 import './styles.css';
 
 class NewPost extends Component {
@@ -19,37 +18,11 @@ class NewPost extends Component {
   }
 
   handleChange = type => ({ target }) => {
-    this.setState({
-      ...this.state,
-      error: null,
-      form: {
-        ...this.state.form,
-        [type]: target.value
-      }
-    })
+    
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const { title, author, body } = this.state.form;
-
-    if (title && author && body) {
-      this.props.addNewPost(this.state.form)
-        .then(() => {
-          this.setState({
-            success: 'Data has been added',
-            form: {
-              title: '',
-              author: '',
-              body: ''
-            }
-          })
-        });
-    } else {
-      this.setState({
-        error: 'Form can not be blank.'
-      });
-    }
   }
 
   render() {
@@ -71,8 +44,4 @@ class NewPost extends Component {
   }
 }
 
-export default graphql(AddPostMutation, {
-  props: ({ mutate }) => ({
-    addNewPost: (newPostData) => mutate({ variables: newPostData })
-  }),
-})(NewPost);
+export default NewPost;

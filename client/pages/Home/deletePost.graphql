@@ -1,5 +1,0 @@
-mutation DeletePostMutation($id: String!){
-  deletePost(_id: $id) {
-    title
-  }
-}

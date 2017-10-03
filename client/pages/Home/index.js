@@ -4,8 +4,6 @@ import { Helmet } from 'react-helmet';
 import { graphql, compose } from 'react-apollo';
 
 import Loader from '../../components/Loader';
-import PostQuery from './postsQuery.graphql';
-import DeletePostMutation from './deletePost.graphql';
 import './styles.css';
 
 class Home extends Component {
@@ -18,13 +16,6 @@ class Home extends Component {
   handleDeletePost = postID => event => {
     event.preventDefault();
 
-    this.props.deletePost(postID)
-      .then(({ data }) => {
-        this.props.data.refetch();
-        this.setState({ deleteMessage: `${data.deletePost.title} berhasil dihapus.` },
-         () => this.hideMessage()
-        )
-      })
   }
   mapPosts = (post) => {
     const slug = `/p/${post.slug}`;
@@ -38,9 +29,7 @@ class Home extends Component {
   }
 
   render() {
-    if (this.props.data.loading) {
-      return <Loader />;
-    }
+    const posts = [];
 
     return (
       <div className="home">
@@ -48,17 +37,10 @@ class Home extends Component {
           <title>Home</title>
         </Helmet>
         {this.state.deleteMessage && (<p>{this.state.deleteMessage}</p>)}
-        <div className="posts">{this.props.data.posts.map(this.mapPosts)}</div>
+        <div className="posts">{posts.map(this.mapPosts)}</div>
       </div>
     );
   }
 }
 
-const mapPropsToOptions = ({ mutate }) => ({
-  deletePost: (postID) => mutate({ variables: { id: postID } })
-})
-
-export default compose(
-  graphql(DeletePostMutation, { props: mapPropsToOptions }),
-  graphql(PostQuery, { options: () => ({ fetchPolicy: 'network-only' }) })
-)(Home);
+export default Home;

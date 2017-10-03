@@ -1,5 +1,0 @@
-mutation AddPostMutation($title: String!, $author: String!, $body: String!){
-  addPost(title: $title, author: $author, body: $body) {
-    title
-  }
-}
