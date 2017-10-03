@@ -1,0 +1,28 @@
+.post-detail {
+  padding: 15px;
+}
+
+.author {
+  font-size: 12px;
+  color:#AAA;
+}
+
+.content {
+  font-size: 13px;
+  color: #333;
+}
+
+.edit-button {
+  margin-bottom: 20px;
+}
+
+.edit-post-btn {
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  background: #ff5722;
+  color: #FFF;
+  padding: 8px 15px;
+
+}

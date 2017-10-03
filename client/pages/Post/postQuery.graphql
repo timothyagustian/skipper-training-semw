@@ -1,0 +1,8 @@
+query PostQuery($slug: String!){
+  post(slug: $slug) {
+    _id
+    title
+    author
+    body
+  }
+}

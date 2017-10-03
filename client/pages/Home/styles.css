@@ -1,3 +1,35 @@
-div {
-  background: yellowgreen;
+.posts {
+  padding: 15px;
+}
+
+.posts > .post-detail {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.post-detail > h3,
+.post-detail > p {
+  margin: 0;
+}
+
+.post-detail > h3 a {
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+}
+
+.post-detail > p a {
+  font-size: 12px;
+  font-weight: 300;
+  color: #AAA;
+}
+
+.delete-post {
+  font-size: 10px;
+  border: none;
+  color: red;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  border-radius: 2px;
 }

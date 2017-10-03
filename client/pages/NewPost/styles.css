@@ -1,0 +1,41 @@
+.form-group {
+  padding: 15px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group label {
+  width: 100%;
+  border: 0;
+  border-radius: 3px;
+  padding: 5px 0 5px 5px;
+  display: block;
+}
+
+.form-group label {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.form-group div {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.form-group button {
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  background: #ff5722;
+  color: #FFF;
+  padding: 8px 15px;
+}
+
+.msg-success {
+  color: green;
+}
+
+.msg-fail {
+  color: red;
+}

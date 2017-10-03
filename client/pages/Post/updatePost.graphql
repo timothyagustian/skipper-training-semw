@@ -1,0 +1,5 @@
+mutation UpdatePostMutation($id: String!, $title: String!, $author: String!, $body: String!){
+  updatePost(_id: $id, title: $title, author: $author, body: $body) {
+    title
+  }
+}

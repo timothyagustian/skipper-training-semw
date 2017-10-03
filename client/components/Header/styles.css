@@ -1,0 +1,29 @@
+.green-toped {
+  background: #42B849;
+  text-align: center;
+  position: relative;
+}
+
+.title {
+  margin: 15px 0;
+}
+
+.title a,
+.title a:focus {
+  color: #FFF;
+}
+
+.new-post {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: #ff5722;
+  color: #FFF;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+.new-post:focus {
+  color: #FFF;
+}

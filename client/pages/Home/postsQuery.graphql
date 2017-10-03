@@ -1,0 +1,8 @@
+query PostsQuery{
+  posts {
+    _id
+    title
+    slug
+    author
+  }
+}

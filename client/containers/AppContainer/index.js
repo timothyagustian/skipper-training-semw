@@ -7,12 +7,9 @@ import routes from '../../routes';
 export default function AppContainer() {
   return (
     <div>
-      <Helmet>
-        <title>%s - Preact Universal App</title>
-        <body className="app" />
-      </Helmet>
+      <Helmet titleTemplate="%s | Skipper SE Training" />
       <Header />
-      <div className="react-route">{routes}</div>
+      <div className="main-content">{routes}</div>
     </div>
   );
 }
